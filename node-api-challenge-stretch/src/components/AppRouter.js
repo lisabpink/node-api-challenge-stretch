@@ -1,16 +1,20 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+import ActionCard from "./ActionCard";
+import ProjectsCard from "./ProjectCard";
+import WelcomePage from "./WelcomePage";
+import Header from "./Header";
 
-import Header from "./components/Header.js.js";
 
-import AppRouter from "./components/AppRouter.js.js";
-
-export default function App() {
+export default function AppRouter() {
   return (
-    <main>
-      <Header />
-      
-      <AppRouter />
-    
-    </main>
+    <div >
+      <Switch>
+        <Route path="/actions" component={ActionCard} />
+        <Route path="/projects" component={ProjectsCard} />
+        <Route path="/header" component={Header} />
+        <Route component={WelcomePage} />
+      </Switch>
+    </div>
   );
 }
