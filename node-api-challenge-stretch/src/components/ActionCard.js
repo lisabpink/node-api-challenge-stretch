@@ -7,7 +7,7 @@ export default function ActionCard({ action }) {
     const [actions, setActions] = useState([]);
   useEffect(() => {
    
-    Axios.get(`localhost:7000/api/actions`)
+    Axios.get(`http://localhost:7000/api/actions`)
       .then(response => {
         console.log(response.data.results);
         setActions(response.data.results);
